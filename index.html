@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>portfolio</title>	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://kit.fontawesome.com/c47106c6a7.js"></script>​
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/main.js"></script>
+	<script
+		crossorigin
+		src="https://unpkg.com/react@17/umd/react.development.js"
+	></script>
+	<script
+		crossorigin
+		src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+	></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>	
+	<div id="root"></div>
+	<script type="text/babel">
+		const project = [
+			{
+				imgSrc: 'img/mealcheck-full.png',
+				title: 'MealCheck',
+				desc: '사내 직원을 위한 식사 신청 및 관리 프로그램 개발',
+				detail: `
+					<h2>Meal Check 프로그램(<a href="http://meal.bnftech.com" target="_blank">http://meal.bnftech.com</a>)</h2>
+					<p>사내 직원을 위한 식사 신청 및 관리 프로그램 개발 (2016.02 ~ 2016.05)</p>
+					<ul>
+						<li>식사 신청</li>
+						<li>그 달의 식사 신청 개수 확인</li>
+						<li>관리자 주간, 월간 리포트</li>
+						<li>식단표 업데이트</li>
+						<li>공제 금액확인 기능 개발</li>
+					</ul>
+					<p>사용기술: C#, Asp.Net MVC5, Bootstrap</p>
+				`
+			},
+			{
+				imgSrc: 'img/mobile-full.png',
+				title: '발전 운전 정보 모바일시스템',
+				desc: '(주)한국남동발전 프로젝트 Web Admin 개발',
+				detail: `
+					<h2>발전 운전 정보 모바일시스템 (주)한국남동발전</h2>
+					<p>Web Admin 개발 (2016.09 ~ 2017.05)</p>
+					<ul>
+						<li>태그 관리</li>
+						<li>사용 통계</li>
+						<li>유저 관리</li>
+						<li>공지사항 기능 구현</li>
+						<li>Secure coding을 통한 보안 이슈 처리</li>
+					</ul>
+					<p>사용기술: Spring Framework, Angular.js</p>
+				`
+			},
+			{
+				imgSrc: 'img/plant-full.png',
+				title: 'HanAra Insight',
+				desc: 'Web기반 발전소 상태 모니터링 프로그램',
+				detail: `
+					<h2>HanAra Insight</h2>
+					<p>Web기반 발전소 상태 모니터링 프로그램 개발<br />(2018.02 ~ 2019.03)</p>
+					<ul>
+						<li>Tag Information</li>
+						<li>Chart management</li>
+						<li>Mimic 프로그램 Front-end 개발</li>
+						<li>Angular Material Design을 이용한 웹 퍼블리싱</li>
+					</ul>
+					<p>사용기술: Javascript(es6), Typescript, Angular, Asp.net API</p>
+				`
+			},
+			{
+				imgSrc: 'img/book-fishing-full.png',
+				title: '책 SNS 사이트',
+				desc: '유투브 노마드코더에서 주최한 해커톤 대회',
+				detail: `
+					<h2>책 SNS 사이트(<a href="https://bookfishing.site" target="_blank">https://bookfishing.site</a>)</h2>
+					<p>유투브 노마드코더에서 주최한 해커톤 대회<br />(2020.02 ~ 2020.04)</p>
+					<ul>
+						<li>Social 로그인 기능 (facebook, google)</li>
+						<li>프로필, 책 리스트, 책 검색</li>
+						<li>Kakao Book API를 이용한 책 등록하기</li>
+						<li>댓글 등등</li>
+					</ul>
+					<p>사용 기술: Javascript(es6), Vue, Node.js, Heroku</p>
+				`
+			},
+			{
+				imgSrc: 'img/dashboard.png',
+				title: 'FDC',
+				desc: 'FDC(Fault Detection Classification) 제품 개발',
+				detail: `
+					<h2>FDC</h2>
+					<p>FDC(Fault Detection Classification) 제품 개발<br />(2020.03 ~ 2020.08)</p>
+					<ul>
+						<li>웹 페이지 퍼블리싱</li>
+						<li>Real Time Monitoring</li>
+						<li>Preprocessing</li>
+						<li>Change Detection, Auto Modeling</li>
+					</ul>
+					<p>사용 기술: Javascript(es6), Vue, Spring Boot</p>
+				`
+			}
+		]
+
+		const Works = ({ title, projects }) => {
+			const [index, setIndex] = React.useState(0)
+
+			const handleClick = (index) => {
+				setIndex(index)
+			}
+
+			const getLeftContent = () => {
+				let tmpIndex = index - 1
+				setIndex(index - 1 < 0 ? project.length - 1 : tmpIndex)
+			}
+
+			const getRightContent = () => {
+				let tmpIndex = index + 1
+				setIndex(index + 1 >= project.length ? 0 : tmpIndex)
+			}
+				
+			return (
+				<React.Fragment>
+					<header>
+					<div className="profile-img">
+						<img src="./img/lee.jpg" alt="LeeSeungHyun" width="120" height="120" title="LeeSeungHyun" />
+					</div>
+					<h1>Seunghyun</h1>
+					<h3>{title}</h3>
+					<ul>
+						<li><a href="https://github.com/LeeSeungHyun" target='_blank'><i className="fab fa-github"></i> <span>Github</span></a></li>
+						<li>
+							<a href="https://pouncing-keyboard-2eb.notion.site/5fb2dc80e4d848008275c1aac0f1aba8" target='_blank'>
+								<img src="./img/notion.svg" alt="notion" width="20" height="18" />
+								<span>Notion</span>
+							</a>
+						</li>
+					</ul>
+				</header>
+					<main>
+						<section>
+							{projects.map((project, i) => (
+								<article key={project.imgSrc} onClick={() => handleClick(i)}>
+									<div>
+										<img src={project.imgSrc} alt="" />
+										<h2>{project.title}.</h2>
+										<p>{project.desc}</p>
+									</div>
+								</article>
+							))}
+						</section>
+						<div className="modal hidden">
+							<div className="modal-overlay"></div>
+							<div className="modal-content">
+								<div>
+									<i className="fas fa-times"></i>
+								</div>
+								<div className="content-container">
+									<div>
+										<i className="fas fa-angle-left" onClick={getLeftContent}></i>
+									</div>
+									<div>
+									<div className="content">
+										<div>
+											<img src={project[index].imgSrc} alt="Detail" width="200" />
+										</div>
+										<div 
+											dangerouslySetInnerHTML={{__html: project[index].detail}}>
+										</div>
+									</div>
+									</div>
+									<div>
+										<i className="fas fa-angle-right" onClick={getRightContent}></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</main> 
+				</React.Fragment>
+			)
+		}
+  
+		ReactDOM.render(<Works title="WEB DEVELOPER" projects={project}/>, document.querySelector('#root'));  
+	</script>
+</body>
+</html>
