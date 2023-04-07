@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Archivo&display=swap");
 
 /* reset */
 * {
@@ -47,7 +47,7 @@ header h1 {
 	justify-content: center;
 	position: relative;
 	top: 200px;
-	font: bold 40px "orbitron";
+	font: bold 40px "Archivo";
 	color: #fff;
 	letter-spacing: 1px;
 }
@@ -55,7 +55,7 @@ header h3 {
 	display: flex;
 	justify-content: center;
 	position: relative;
-	font: 14px "orbitron";
+	font: 14px "Archivo";
 	color: #fff;
 	letter-spacing: 2px;
 	top: 220px;
@@ -128,14 +128,14 @@ main section article div img {
 
 main section article div h2 {
 	margin-top: 15px;
-	font: bold 11px/1 "orbitron";
+	font: bold 11px/1 "Archivo";
 	letter-spacing: 1px;
 	color: #444;
 	margin-bottom: 5px;
 }
 
 main section article div p {
-	font: 10px/1.2 "arial";
+	font: 10px/1.2 "Archivo";
 	color: #777;
 	margin-bottom: 15px;
 }
